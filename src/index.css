@@ -18,6 +18,10 @@
   --rating-color: #ffc908;
 }
 
+li {
+  list-style: none;
+}
+
 body {
   font-family: var(--font-family) !important;
 }
