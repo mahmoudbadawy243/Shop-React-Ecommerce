@@ -5,10 +5,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { NavLink } from "react-router-dom";
+import { UserContext } from "../../Context/UserContext";
 
 // --------------------------------------------------------------------------
 
 export default function Login() {
+  let { setUserLogin } = useContext(UserContext);
   let navigate = useNavigate();
 
   const [apiError, setapiError] = useState("");
@@ -24,6 +26,7 @@ export default function Login() {
       .then((apiResponse) => {
         if (apiResponse?.data?.message == "success") {
           localStorage.setItem("userToken", apiResponse.data.token);
+          setUserLogin(apiResponse.data.token);
           navigate("/");
           setisLoading(false);
         }

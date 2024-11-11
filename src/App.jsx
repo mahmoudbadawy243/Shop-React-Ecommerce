@@ -11,6 +11,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/Notfound";
+import UserContextProvider from "./Context/UserContext";
 
 let routes = [
   {
@@ -47,10 +48,12 @@ const router = createBrowserRouter(routes, {
 function App() {
   return (
     <>
-      <RouterProvider
-        router={router}
-        future={{ v7_startTransition: true }} //new version of react router
-      ></RouterProvider>
+      <UserContextProvider>
+        <RouterProvider
+          router={router}
+          future={{ v7_startTransition: true }} //new version of react router
+        ></RouterProvider>
+      </UserContextProvider>
     </>
   );
 }

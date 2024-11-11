@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 // import axios from "axios";
 import { useFormik } from "formik";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import { UserContext } from "./../../Context/UserContext";
 
 // -----------------------------------------------------------------
 
 export default function Register() {
+  let { setUserLogin } = useContext(UserContext);
+
   let navigate = useNavigate();
   const [apiError, setapiError] = useState("");
   const [isLoading, setisLoading] = useState(false);
@@ -23,6 +26,7 @@ export default function Register() {
       .then((apiResponse) => {
         if (apiResponse?.data?.message == "success") {
           localStorage.setItem("userToken", apiResponse.data.token);
+          setUserLogin(apiResponse.data.token);
           navigate("/");
           setisLoading(false);
         }
