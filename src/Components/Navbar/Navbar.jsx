@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-// import logo from " ../../../src/assets/images/logo.svg ";
+// import logo from " ../../../src/assets/images/logo.svg";
 export default function Navbar() {
   return (
     <>
-      <nav className="px-8 mb-8  static lg:fixed bg-main-light top-0 left-0 right-0 ">
+      <nav className="px-8 mb-8  static bg-main-light top-0 left-0 right-0 ">
         <div className=" justify-between mx-auto py-2 flex flex-col lg:flex-row ">
           <div className=" flex flex-col lg:flex-row items-center">
             {/* <img src={logo} width={110} alt="fresh cart logo" /> */}
