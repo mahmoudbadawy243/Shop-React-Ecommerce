@@ -4,8 +4,14 @@ import { UserContext } from "../../Context/UserContext";
 // import logo from " ../../../src/assets/images/logo.svg";
 
 export default function Navbar() {
-  let { userLogin } = useContext(UserContext);
+  let { userLogin, setUserLogin } = useContext(UserContext);
   let navigate = useNavigate();
+
+  function logOut() {
+    localStorage.removeItem("userToken");
+    setUserLogin(null);
+    navigate("/login");
+  }
 
   return (
     <>
@@ -25,9 +31,9 @@ export default function Navbar() {
                   <li className="mx-2 py-2 text-lg text-slat-900">
                     <NavLink to="categories">Categoris</NavLink>
                   </li>
-                  <li className="mx-2 py-2 text-lg text-slat-900">
+                  {/* <li className="mx-2 py-2 text-lg text-slat-900">
                     <NavLink to="products">Products</NavLink>
-                  </li>
+                  </li> */}
                   <li className="mx-2 py-2 text-lg text-slat-900">
                     <NavLink to="brands">Brands</NavLink>
                   </li>
@@ -46,7 +52,10 @@ export default function Navbar() {
                 </li>
               </>
             ) : (
-              <li className="mx-2 text-lg text-slat-900 py-2 cursor-pointer ">
+              <li
+                onClick={logOut}
+                className="mx-2 text-lg text-slat-900 py-2 cursor-pointer "
+              >
                 <span>Logout</span>
               </li>
             )}

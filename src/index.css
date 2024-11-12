@@ -18,6 +18,10 @@
   --rating-color: #ffc908;
 }
 
+.row {
+  @apply flex flex-wrap px-20 py-8 items-center;
+}
+
 li {
   list-style: none;
 }
@@ -39,9 +43,8 @@ a:hover {
 .product {
   overflow: hidden;
 }
-.product:hover {
-  box-shadow: var(--shadow);
-  border: solid 1px var(--main-color);
+.btn {
+  @apply px-4 py-2 w-full rounded-lg text-white bg-green-600;
 }
 .product .btn {
   transition: transform 1s, opacity 1s;
