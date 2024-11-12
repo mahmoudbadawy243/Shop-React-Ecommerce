@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Products() {
   let [allProducts, setAllProducts] = useState([]);
@@ -26,9 +27,12 @@ export default function Products() {
   return (
     <>
       <div className="row">
+
           {allProducts.map((product) => 
+        
             <div key={product.id} className="w-1/6  px-4 ">
               <div className="product py-4 ">
+            <Link to={`/productdetails/${product.id}`} >
                 <img
                   src={product.imageCover}
                   className="w-full"
@@ -47,7 +51,11 @@ export default function Products() {
                     <i className="fas fa-star text-yellow"></i>
                   </span>
                 </div>
-                <button className="btn">add to cart</button>
+                  <button className="btn">add to cart</button>
+
+                </Link>
+                
+
               </div>
             </div>
           )}

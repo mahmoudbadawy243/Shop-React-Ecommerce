@@ -13,6 +13,7 @@ import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/Notfound";
 import UserContextProvider from "./Context/UserContext";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
+import ProductDetails from "./Components/ProductDetails/ProductDetails";
 
 let routes = [
   {
@@ -32,6 +33,14 @@ let routes = [
         element: (
           <ProtectedRoute>
             <Cart />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "productdetails/:id",
+        element: (
+          <ProtectedRoute>
+            <ProductDetails />
           </ProtectedRoute>
         ),
       },
