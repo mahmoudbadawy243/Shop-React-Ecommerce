@@ -37,7 +37,7 @@ let routes = [
         ),
       },
       {
-        path: "productdetails/:id",
+        path: "productdetails/:id/:category",
         element: (
           <ProtectedRoute>
             <ProductDetails />

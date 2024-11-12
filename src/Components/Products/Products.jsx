@@ -32,8 +32,10 @@ export default function Products() {
         
             <div key={product.id} className="w-1/6  px-4 ">
               <div className="product py-4 ">
-            <Link to={`/productdetails/${product.id}`} >
-                <img
+
+            <Link to={`/productdetails/${product.id}/${product.category.name}`} >
+                
+                  <img
                   src={product.imageCover}
                   className="w-full"
                   alt={product.title}
