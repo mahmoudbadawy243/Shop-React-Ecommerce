@@ -19,8 +19,9 @@
 }
 
 .row {
-  @apply flex flex-wrap px-20 py-8 items-center;
+  @apply flex flex-wrap  py-8 items-center;
 }
+
 
 li {
   list-style: none;
@@ -28,6 +29,7 @@ li {
 
 body {
   font-family: var(--font-family) !important;
+  padding: 0 20px;
 }
 .rating-color {
   color: var(--rating-color);
@@ -42,6 +44,7 @@ a:hover {
 }
 .product {
   overflow: hidden;
+  padding: 0 20px
 }
 .btn {
   @apply px-4 py-2 w-full rounded-lg text-white bg-green-600;
@@ -69,4 +72,8 @@ a:hover {
 }
 button:disabled {
   background-color: var(--disabled-color) !important;
+}
+
+.category-img{
+  height : 200px
 }

@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import Slider from "react-slick";
+
 
 export default function ProductDetails() {
 
@@ -8,7 +10,13 @@ export default function ProductDetails() {
   let { id, category } = useParams()
   let[productDetails,setProductDetails]=useState(null)
 
-
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   function getProductDetails(id) {
     axios.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`)
@@ -48,7 +56,10 @@ export default function ProductDetails() {
     <>
       <div className="row">
         <div className="w-1/4">
-        <img src={productDetails?.imageCover} className='w-full' alt={productDetails?.title} />
+        <Slider {...settings}>
+          { productDetails?.images.map(( src )=> <img src={src} className='w-full' alt={productDetails?.title} />
+  )}
+        </Slider>
         </div>
         
         <div className="w-3/4 p-6">
@@ -59,10 +70,10 @@ export default function ProductDetails() {
                   <span>{productDetails?.price} EGP</span>
                   <span>
                     {productDetails?.ratingsAverage}
-                    <i className="fas fa-star text-yellow"></i>
+                    <i className="fas fa-star text-yellow-500"></i>
                   </span>
                 </div>
-                  <button className="btn mt-6 ">add to cart</button>
+                  <button className="btn mt-6 hover:bg-green-700 ">add to cart</button>
       
         </div>
     </div>
@@ -91,10 +102,10 @@ export default function ProductDetails() {
                   <span>{product.price} EGP</span>
                   <span>
                     {product.ratingsAverage}
-                    <i className="fas fa-star text-yellow"></i>
+                    <i className="fas fa-star text-yellow-500"></i>
                   </span>
                 </div>
-                  <button className="btn">add to cart</button>
+                  <button className="btn hover:bg-green-700 ">add to cart</button>
 
                 </Link>
                 

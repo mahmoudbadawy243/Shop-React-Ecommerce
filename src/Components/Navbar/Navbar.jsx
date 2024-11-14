@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
-// import logo from " ../../../src/assets/images/logo.svg";
+import logo from '../../assets/images/logo.svg'
+
 
 export default function Navbar() {
   let { userLogin, setUserLogin } = useContext(UserContext);
@@ -15,10 +16,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="px-8 mb-8  static bg-main-light top-0 left-0 right-0 ">
+      <nav className=" static lg:fixed px-10 top-0 left-0 right-0 z-50 bg-main-light " >
         <div className=" justify-between mx-auto py-2 flex flex-col lg:flex-row ">
           <div className=" flex flex-col lg:flex-row items-center">
-            {/* <img src={logo} width={110} alt="fresh cart logo" /> */}
+            <img src={logo} width={110} alt="fresh cart logo" />
             <ul className="flex flex-col lg:flex-row justify-content mx-8 items-center ">
               {userLogin !== null ? (
                 <>
@@ -68,7 +69,7 @@ export default function Navbar() {
             </li>
           </div>
         </div>
-      </nav>
+        </nav>
     </>
   );
 }

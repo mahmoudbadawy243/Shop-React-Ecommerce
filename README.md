@@ -33,5 +33,26 @@ Currently, two official plugins are available:
 
  9 - npm i formik yup
 
+-----------------------
+slider
+
+npm install react-slick
+npm install slick-carousel
+
+import slick-carousel/slick/slick/.css
+import slick-carousel/slick/slick-theme.css
+
+
+---------------------------------------------
+
+React query
+
+npm i @tanstack/react-query
+npm i @tanstack/react-query-devtools
+
+----------------------------------------------
+toaster
+
+npm install react-hot-toast
 
  -->
