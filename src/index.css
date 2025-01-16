@@ -7,6 +7,7 @@
   --main-color: #0aad0a;
 }
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+
 :root {
   --main-color: #0aad0a;
   --disabled-color: #95ef95;
@@ -21,7 +22,6 @@
 .row {
   @apply flex flex-wrap  py-8 items-center;
 }
-
 
 li {
   list-style: none;
@@ -44,7 +44,7 @@ a:hover {
 }
 .product {
   overflow: hidden;
-  padding: 0 20px
+  padding: 0 20px;
 }
 .btn {
   @apply px-4 py-2 w-full rounded-lg text-white bg-green-600;
@@ -74,6 +74,6 @@ button:disabled {
   background-color: var(--disabled-color) !important;
 }
 
-.category-img{
-  height : 200px
+.category-img {
+  height: 200px;
 }

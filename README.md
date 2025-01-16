@@ -9,27 +9,67 @@ Currently, two official plugins are available:
 
 <!--
 
- 1 - npm create vite@latest
 
- 2 - cd
+=== creat React Project
 
- 3 - npm install
+--  npm create vite@latest     >>>     cd + project name     >>>     npm install     >>>     npm run dev
 
- 4 - npm run dev
 
- 5 - npm i -D tailwindcss postcss autoprefixer
+-----------------------------------------------------------------------------------------------------
 
- 6 - npx tailwindcss init -p >>>
-  in index.css write ===== @tailwind base , @tailwind components , @tailwind utilities
-  in tailwind.config.js == content : [ ' ./src/**/*.{html,js,jsx,ts,tsx}' ,' ./index.html ' ]
-  stop running then run again
 
- 6 - npm i axios
+=== we should write name of folders and files of sections in capital case such as : Navbar , Navbar.jsx
 
- 7 - npm i react-router-dom  >>>  to be able to use Routing
 
- 8 - npm i @fortawesome/fontawesome-free
- in main.jsx write ===== import '@fortawesome/fontawesome-free/css/all.min.css'
+------------------------------------------------------------------------------------------------------
+
+
+=== install Tailwind Css
+
+ npm i -D tailwindcss postcss autoprefixer      >>>     npx tailwindcss init -p >>>
+
+--  in index.css write ===== @tailwind base ; @tailwind components ; @tailwind utilities ;
+--  in tailwind.config.js == content : [ ' ./src/**/*.{html,js,jsx,ts,tsx}' ,' ./index.html ' ]
+--  stop running then run again
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+=== install axios to use it with APIs
+
+--  npm i axios
+
+
+----------------------------------------------------------------------------------------------------------
+
+=== install react router dom to use it in navigation
+
+--  npm i react-router-dom  >>>  to be able to use Routing
+
+
+-----------------------------------------------------------------------------------------------------------
+
+=== install font awesome to use icons
+
+-- npm i @fortawesome/fontawesome-free
+-- in main.jsx write ===== import '@fortawesome/fontawesome-free/css/all.min.css'
+
+----------------------------------------------------------------------------------------------------------
+
+====================
+
+
+
+
+
+
+
+
+
+
+
+
 
  9 - npm i formik yup
 

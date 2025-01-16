@@ -1,3 +1,18 @@
+/*
+
+npm i formik   >>>  to build Forms
+npm i yup      >>>  to build Validations
+
+-- in yhis project we use 'flowbite' liberary to build form directly and we use extintion 'html to jsx' to convert code to jsx by select the code and right click then convert to jsx
+
+-- we use that line 'import { useNavigate } from "react-router-dom"; ' to dynamically send the user to home page when the response of axios is success
+
+== solving the proplem of when refresh all data removed and user get logout by using useEffect in 'UserContext'
+-----------------------------------------------------
+
+
+*/
+
 import React, { useContext } from "react";
 // import axios from "axios";
 import { useFormik } from "formik";
@@ -16,24 +31,24 @@ export default function Register() {
   const [apiError, setapiError] = useState("");
   const [isLoading, setisLoading] = useState(false);
 
-  // -----------------------------------------------------------------
+  // ---------------------------------------------------------------------------------------------------------------------
 
   function handleRegister(value) {
-    setisLoading(true);
+    setisLoading(true); // to display the loading animation when user press supmit we change the value of isLoading that written below in button to true here to affect it
 
     axios
-      .post("https://ecommerce.routemisr.com/api/v1/auth/signup", value)
+      .post("https://ecommerce.routemisr.com/api/v1/auth/signup", value) // axios take the link and the value that send to backend
       .then((apiResponse) => {
         if (apiResponse?.data?.message == "success") {
-          localStorage.setItem("userToken", apiResponse.data.token);
-          setUserLogin(apiResponse.data.token);
-          navigate("/");
-          setisLoading(false);
+          localStorage.setItem("userToken", apiResponse.data.token); // save token in localStorage also save token in localStorage ,, save token before navigate
+          setUserLogin(apiResponse.data.token); // save token in localStorage also save token in localStorage
+          navigate("/"); // programatic routing to send user automatically to home page when response is done correctly
+          setisLoading(false); // when the response is coming we stop the animation
         }
       })
       .catch((apiResponse) => {
-        setisLoading(false);
-        setapiError(apiResponse?.response?.data?.message);
+        setisLoading(false); // when the response is coming we stop the animation
+        setapiError(apiResponse?.response?.data?.message); // put the value error message and display it in code written in return
       });
   }
 
@@ -68,7 +83,7 @@ export default function Register() {
       rePassword: "",
     },
 
-    validationSchema,
+    validationSchema, // to tell formik that function 'validationSchema' is for validation of inputs
     onSubmit: handleRegister,
   });
 
@@ -77,7 +92,7 @@ export default function Register() {
   return (
     <>
       <form onSubmit={formik.handleSubmit} className="max-w-md mt-10 mx-auto  ">
-        {apiError ? (
+        {apiError ? ( // if the response of API is error and enter the catch , it desplayed here
           <div
             className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
             role="alert"
@@ -119,7 +134,7 @@ export default function Register() {
           ) : null}
         </div>
 
-        {/*--------------------------------------------------------------------- */}
+        {/*------------------------------------------------------------------------------------------------------------------------------------ */}
 
         <div className="relative z-0 w-full mb-5 group">
           <input
@@ -150,6 +165,7 @@ export default function Register() {
         ) : null}
 
         {/* --------------------------------------------------------------------- */}
+
         <div className="relative z-0 w-full mb-5 group">
           <input
             name="phone"
@@ -177,7 +193,9 @@ export default function Register() {
             <span className="font-medium"> {formik.errors.phone} </span>
           </div>
         ) : null}
+
         {/* ----------------------------------------------------------------------------- */}
+
         <div className="relative z-0 w-full mb-5 group">
           <input
             name="password"
@@ -205,7 +223,9 @@ export default function Register() {
             <span className="font-medium"> {formik.errors.password} </span>
           </div>
         ) : null}
+
         {/* ---------------------------------------------------------------------------------- */}
+
         <div className="relative z-0 w-full mb-5 group">
           <input
             name="rePassword"
@@ -233,13 +253,15 @@ export default function Register() {
             <span className="font-medium"> {formik.errors.rePassword} </span>
           </div>
         ) : null}
+
         {/* ----------------------------------------------------------------------------------- */}
 
         <button
           type="submit"
           className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
         >
-          {isLoading ? <i className="fas fa-spinner fa-spin"></i> : " Submit"}
+          {isLoading ? <i className="fas fa-spinner fa-spin"></i> : " Submit"}{" "}
+          {/* displaying animation until the response coming */}
         </button>
 
         {/* ---------------------------------------------------------------------------------- */}
