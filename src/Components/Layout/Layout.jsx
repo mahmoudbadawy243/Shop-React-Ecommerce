@@ -15,7 +15,7 @@ export default function Layout() {
     <>
       <Navbar />
 
-      <div className="container">
+      <div className="container mx-auto">
         <Outlet></Outlet>
       </div>
 

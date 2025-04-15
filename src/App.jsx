@@ -41,8 +41,6 @@ const router = createBrowserRouter(routes, {
 ==  we use devtool of reactQury that provide some features and appear as icon when development only >> npm i @tanstack/react-query-devtools  >> then import 'ReactQueryDevtools' as show below then put the tag below in return >> <ReactQueryDevtools />
 ---------------------------------------------------------------------
 
-
-
 */
 
 import "./App.css";
@@ -68,6 +66,8 @@ import CartContextProvider from "./Context/CartContext";
 import { Toaster } from "react-hot-toast";
 import Checkout from "./Components/Checkout.jsx/Checkout";
 import Orders from "./Components/Orders/Orders";
+import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
+import ResetPassword from "./Components/ResetPassword/ResetPassword";
 
 let query = new QueryClient();
 
@@ -101,14 +101,18 @@ let routes = [
           </ProtectedRoute>
         ),
       },
-      // {
-      //   path: "products",
-      //   element: (
-      //     <ProtectedRoute>
-      //       <Products />
-      //     </ProtectedRoute>
-      //   ),
-      // },
+      {
+        path: "forgotPassword",
+        element: (
+            <ForgotPassword />
+        ),
+      },
+      {
+        path: "resetPassword",
+        element: (
+            <ResetPassword />
+        ),
+      },
       {
         path: "brands",
         element: (

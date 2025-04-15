@@ -67,7 +67,7 @@ export default function Login() {
 
   return (
     <>
-      <form onSubmit={formik.handleSubmit} className="max-w-md mt-10 mx-auto  ">
+      <form onSubmit={formik.handleSubmit} className="max-w-md my-36 mx-auto  "> {/* onSubmit={formik.handleSubmit}  is a standard and fixed naming  */}
         {apiError ? (
           <div
             className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
@@ -77,7 +77,7 @@ export default function Login() {
           </div>
         ) : null}
 
-        <h2 className="text-3xl font-bold text-green-600 mb-7  ">Login Now</h2>
+        <h2 className="text-3xl font-bold text-green-800 mb-12 ">Login Now</h2>
 
         {/* -------------------------------------------------------------------------- */}
 
@@ -138,10 +138,10 @@ export default function Login() {
           </div>
         ) : null}
         {/* ------------------------------------------------------------------------- */}
-        <div className="flex items-center mt-10 ">
+        <div className=" mt-10 ">
           <button
             type="submit"
-            className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            className="text-white bg-green-800 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-40 px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
           >
             {isLoading ? (
               <i className="fas fa-spinner fa-spin"></i>
@@ -149,13 +149,22 @@ export default function Login() {
               <span>Login</span>
             )}
           </button>
-          <p className="pl-4">
+          {/* ------------------------------------------------------------- */}
+            
+            <span className="font-semibold block pt-8">
+              {" "}
+              <NavLink to={"/forgotPassword"}>Forget Password ? </NavLink>{" "}
+            </span>{" "}
+          
+          {/* ------------------------------------------------------------- */}
+          <p className="pt-4">
             Did not have account yet ?{" "}
             <span className="font-semibold">
               {" "}
               <NavLink to={"/Register"}> Register Now </NavLink>{" "}
             </span>{" "}
           </p>
+            {/* ------------------------------------------------------------ */}
         </div>
       </form>
     </>

@@ -43,7 +43,7 @@ export default function CategorySlider() {
 
   return (
     <>
-      <div className="px-20 mb-10">
+      <div className="px-20 mb-10 md:block hidden">
         <h2 className="py-2 text-xl text-gray-800 font-medium">
           Shop Popular Categories{" "}
         </h2>
