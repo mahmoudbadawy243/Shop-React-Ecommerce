@@ -55,7 +55,7 @@ import Layout from "./Components/Layout/Layout";
 import Navbar from "./Components/Navbar/Navbar";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
-import NotFound from "./Components/NotFound/Notfound";
+import NotFound from "./Components/NotFound/NotFound";
 import UserContextProvider from "./Context/UserContext";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
@@ -171,7 +171,7 @@ let routes = [
         ),
       },
       {
-        path: " * ",
+        path: "*",
         element: <NotFound />,
       },
       { path: "register", element: <Register /> },
